@@ -18,8 +18,9 @@ $("#add-btn").on("click", function(event) {
     // on success, run this callback
     .then(function(data) {
       // log the data we found
-      console.log(data);
       alert("Adding product...");
+      console.log(data);
+      
     });
 
   // empty each input box by replacing the value with an empty string
