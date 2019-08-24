@@ -1,9 +1,11 @@
 //This file offers a set of routes for displaying and saving data to the db
 
-
+var express = require("express");
 // Dependencies
 // =============================================================
-var Product = require("../models/wiishare.js");
+// var Product = require("../modelsold/wiishare.js.js");
+
+db = require("../models")
 
 // Routes
 // =============================================================
@@ -12,23 +14,16 @@ module.exports = function(app) {
   // If a user sends data to add a new product...
   app.post("/api/new", function(req, res) {
     // Take the request...
-    var product = req.body;
 
-    // Create a routeName
-
-    // Using a RegEx Pattern to remove spaces from character.name
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    var routeName = product.name.replace(/\s+/g, "").toLowerCase();
-
-    // Then add the character to the database using sequelize
-    Product.create({
-      routeName: routeName,
-      name: product.name,
-      product: product.product,
-      city: product.city,
-      zipCode: product.zipCode
+     db.Product.create({
+       name: req.body.name,
+       product: req.body.product,
+       city: req.body.city,
+       zipCode: req.body.zipCode
+       
+    }).then(function(product) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(product);
     });
-
-    res.status(204).end();
-  });
-};
+  })
+}
