@@ -26,4 +26,17 @@ module.exports = function(app) {
       res.json(product);
     });
   })
+
+  app.post("/api/newUser", function(req, res) {
+    // Take the request...
+    console.log(req.body);
+     db.Users.create({
+       name: req.body.userName,
+       address: req.body.address,
+       
+    }).then(function(users) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(users);
+    });
+  })
 }
