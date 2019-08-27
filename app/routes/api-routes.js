@@ -22,8 +22,21 @@ module.exports = function(app) {
        zipCode: req.body.zipCode
        
     }).then(function(product) {
-      // We have access to the new todo as an argument inside of the callback function
       res.json(product);
+    });
+  })
+
+  app.post("/api/newUser", function(req, res) {
+    // Take the request...
+    console.log(req.body);
+     db.users.create({
+       userName: req.body.userName,
+       address: req.body.address,
+       email: req.body.email,
+       password: req.body.password
+       
+    }).then(function(users) {
+      res.json(users);
     });
   })
 }

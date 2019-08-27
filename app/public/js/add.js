@@ -31,3 +31,29 @@ $("#add-btn").on("click", function(event) {
 
 });
 
+
+
+// // when user clicks sign-up btn
+// $("#sign-up").on("click", function(event) {
+//   event.preventDefault();
+
+// //make a user info obj
+// var newUser = {
+//   userName: $("#userName").val().trim(),
+//   address: $("#address").val().trim(),
+// };
+
+// console.log(newUser);
+
+//   // send an AJAX POST-request with jQuery
+//   $.post("/api/newUser", newUser)
+//     // on success, run this callback
+//     .then(function(data) {
+//       // log the data we found
+//       alert("Adding new user to db");
+//       console.log(data);
+
+//       $("#userName").val("");
+//       $("#address").val("");
+//     });
+//   });
