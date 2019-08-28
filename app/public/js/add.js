@@ -14,10 +14,11 @@ $("#add-btn").on("click", function(event) {
   else {
   // make a product obj
   var newProduct = {
-    name: $("#name").val().trim(),
+    yourName: $("#name").val().trim(),
     product: $("#product").val().trim(),
   };
   console.log(newProduct);
+  alert("New product added");
 
   // send an AJAX POST-request with jQuery
   $.post("/api/new", newProduct)
@@ -28,6 +29,5 @@ $("#add-btn").on("click", function(event) {
       alert("Adding product...");
       
     });
-
 
 }});

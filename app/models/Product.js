@@ -1,7 +1,7 @@
 
  module.exports = function(sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
-    name: DataTypes.STRING,
+    yourName: DataTypes.STRING,
     product: DataTypes.STRING
   }, {
     freezeTableName: true

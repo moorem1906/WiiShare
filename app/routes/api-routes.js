@@ -16,7 +16,7 @@ module.exports = function(app) {
     // Take the request...
 
      db.Product.create({
-       name: req.body.name,
+       yourName: req.body.yourName,
        product: req.body.product
        
     }).then(function(product) {
