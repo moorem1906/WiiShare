@@ -36,4 +36,11 @@ module.exports = function(app) {
       res.json(users);
     });
   })
+
+  app.get("/api/all", function(req, res) {
+    db.Product.findAll({}).then(function(products) {
+     res.json(products);
+   });
+  })
 }
+

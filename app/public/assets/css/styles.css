@@ -10,13 +10,24 @@ body {
   text-align: center;
 }
 
+h3 {
+  margin-top: 7%;
+
+}
+
+.my-5 {
+color: #000000;
+}
+
+
+
 .center{
   position:absolute;
 
     left:65%;
-    top:60%;
+    top:65%;
     margin-left:-390px;
-    margin-top:-325px;
+    margin-top:-450px;
 }
 .card-signin {
   border: 0;
