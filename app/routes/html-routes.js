@@ -13,11 +13,19 @@ module.exports = function(app) {
 
   // index route loads add.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
+
+  app.get("/signin", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signin.html"));
+    });
 
   app.get("/all", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
+  });
+
+  app.get("/add", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/add.html"));
   });
 
   app.get("/login", function(req, res) {

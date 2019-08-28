@@ -6,6 +6,8 @@
 body {
   background: #007bff;
   background: linear-gradient(to right, rgb(16, 17, 17), rgb(82, 83, 83));
+  color: green;
+  text-align: center;
 }
 
 .center{
@@ -121,6 +123,30 @@ body {
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+}
+
+#viewComm {
+  color: green;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#addProd {
+  color: green;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.products {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#share {
+  color: green;
+  font-size: 30px;
+  font-weight: 400;
 }
 
 /* Fallback for Edge
