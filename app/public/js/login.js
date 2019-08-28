@@ -6,7 +6,7 @@ $("#my-4").on("click", function (event) {
   console.log( "user ID being sent in URL is "+ userid)
   window.location = "/" + userid;
 
-  
+
     var name = $("#inputName").val().trim();
     var address = $("#inputAddress").val().trim();
     var email = $("#inputEmail").val().trim();
@@ -21,8 +21,6 @@ $("#my-4").on("click", function (event) {
       address: $("#inputAddress").val().trim(),
       email: $("#inputEmail").val().trim(),
       password: $("#inputPassword").val().trim(),
-
-
     };
     console.log(newUser);
 
@@ -31,6 +29,7 @@ $("#my-4").on("click", function (event) {
       // on success, run this callback
       .then(function (data) {
         // log the data we found
+        console.log(data);
         alert("Creating new user account");
 
       });
@@ -44,29 +43,3 @@ $("#my-4").on("click", function (event) {
     window.location.assign("/");
   }});
 
-
-
-  // // when user clicks sign-up btn
-  // $("#my-4").on("click", function(event) {
-  //   event.preventDefault();
-
-  // //make a user info obj
-  // var newUser = {
-  //   userName: $("#inputName").val().trim(),
-  //   address: $("#inputAddress").val().trim(),
-  // };
-
-  // console.log(newUser);
-
-  //   // send an AJAX POST-request with jQuery
-  //   $.post("/api/newUser", newUser)
-  //     // on success, run this callback
-  //     .then(function(data) {
-  //       // log the data we found
-  //       alert("Adding new user to db");
-  //       console.log(data);
-
-  //       $("#inputName").val("");
-  //       $("#inputAddress").val("");
-  //     });
-  //   });

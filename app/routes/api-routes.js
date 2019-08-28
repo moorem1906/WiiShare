@@ -16,10 +16,8 @@ module.exports = function(app) {
     // Take the request...
 
      db.Product.create({
-       name: req.body.name,
-       product: req.body.product,
-       city: req.body.city,
-       zipCode: req.body.zipCode
+       yourName: req.body.yourName,
+       product: req.body.product
        
     }).then(function(product) {
       res.json(product);
@@ -28,7 +26,6 @@ module.exports = function(app) {
 
   app.post("/api/newUser", function(req, res) {
     // Take the request...
-    console.log(req.body);
      db.users.create({
        userName: req.body.userName,
        address: req.body.address,

@@ -1,17 +1,24 @@
 // Code here handles what happens when a user submits a new product on the form.
-// Effectively it takes the form inputs then sends it to the server to save in the DB.
+// Takes the form inputs then sends it to the server to save in the DB.
 
 // when user clicks add-btn
 $("#add-btn").on("click", function(event) {
   event.preventDefault();
 
+  var name = $("#name").val().trim();
+  var product = $("#product").val().trim();
+
+  if (name === "" || product === ""){
+    alert("Please add your name and a product");
+  }
+  else {
   // make a product obj
   var newProduct = {
-    name: $("#name").val().trim(),
+    yourName: $("#name").val().trim(),
     product: $("#product").val().trim(),
-    city: $("#city").val().trim(),
-    zipCode: $("#zipCode").val().trim()
   };
+  console.log(newProduct);
+  alert("New product added");
 
   var parseUser = {
     name: $("#name").val().trim(),
@@ -24,8 +31,8 @@ $("#add-btn").on("click", function(event) {
     // on success, run this callback
     .then(function(data) {
       // log the data we found
-      alert("Adding product...");
       console.log(data);
+      alert("Adding product...");
       
     });
 
