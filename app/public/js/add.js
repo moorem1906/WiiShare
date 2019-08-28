@@ -13,8 +13,14 @@ $("#add-btn").on("click", function(event) {
     zipCode: $("#zipCode").val().trim()
   };
 
+  var parseUser = {
+    name: $("#name").val().trim(),
+    product: $("#product").val().trim(),
+    city: $("#city").val().trim(),
+  };
+
   // send an AJAX POST-request with jQuery
-  $.post("/api/new", newProduct)
+  $.post("/api/new",  newProduct)
     // on success, run this callback
     .then(function(data) {
       // log the data we found
@@ -22,6 +28,11 @@ $("#add-btn").on("click", function(event) {
       console.log(data);
       
     });
+
+  $.post("/all", parseUser)
+  .then(function (data) {  
+    console.log(data)
+  });
 
   // empty each input box by replacing the value with an empty string
   $("#name").val("");

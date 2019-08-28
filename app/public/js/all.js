@@ -1,4 +1,8 @@
-// Code here handles what how the page displays all of the products
+//Click The Request Button to create a product request
+$("#my-5").on("click", function (event) {
+  event.preventDefault();
+
+// Code here handles how the page displays all of the products
 // It pings the server. The server then pings the database and displays all of the products.
 
 // make a get request to our api to grab every product
