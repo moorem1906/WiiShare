@@ -2,53 +2,53 @@
 // Takes the form inputs then sends it to the server to save in the DB.
 
 // when user clicks add-btn
-$("#add-btn").on("click", function(event) {
+$("#add-btn").on("click", function (event) {
   event.preventDefault();
 
   var name = $("#name").val().trim();
   var product = $("#product").val().trim();
 
-  if (name === "" || product === ""){
+  if (name === "" || product === "") {
     alert("Please add your name and a product");
   }
   else {
-  // make a product obj
-  var newProduct = {
-    yourName: $("#name").val().trim(),
-    product: $("#product").val().trim(),
-  };
-  console.log(newProduct);
-  alert("New product added");
+    // make a product obj
+    var newProduct = {
+      yourName: $("#name").val().trim(),
+      product: $("#product").val().trim(),
+    };
+    console.log(newProduct);
+    alert("New product added");
 
-  var parseUser = {
-    name: $("#name").val().trim(),
-    product: $("#product").val().trim(),
-    city: $("#city").val().trim(),
-  };
+    var parseUser = {
+      name: $("#name").val().trim(),
+      product: $("#product").val().trim(),
+     
+    };
 
-  // send an AJAX POST-request with jQuery
-  $.post("/api/new",  newProduct)
-    // on success, run this callback
-    .then(function(data) {
-      // log the data we found
-      console.log(data);
-      alert("Adding product...");
-      
-    });
+    // send an AJAX POST-request with jQuery
+    $.post("/api/new", newProduct)
+      // on success, run this callback
+      .then(function (data) {
+        // log the data we found
+        console.log(data);
+        alert("Adding product...");
 
-  $.post("/all", parseUser)
-  .then(function (data) {  
-    console.log(data)
+      });
+
+    $.post("/all", parseUser)
+      .then(function (data) {
+        console.log(data)
+      });
+
+    // empty each input box by replacing the value with an empty string
+    $("#name").val("");
+    $("#product").val("");
+    $("#city").val("");
+    $("#zipCode").val("");
+
+    }
   });
-
-  // empty each input box by replacing the value with an empty string
-  $("#name").val("");
-  $("#product").val("");
-  $("#city").val("");
-  $("#zipCode").val("");
-
-});
-
 
 
 // // when user clicks sign-up btn
