@@ -2,7 +2,11 @@
 $("#my-4").on("click", function (event) {
   event.preventDefault();
 
+  var userid = this.id
+  console.log( "user ID being sent in URL is "+ userid)
+  window.location = "/" + userid;
 
+  
     var name = $("#inputName").val().trim();
     var address = $("#inputAddress").val().trim();
     var email = $("#inputEmail").val().trim();
@@ -37,7 +41,7 @@ $("#my-4").on("click", function (event) {
     // $("#inputEmail").val("");
     // $("#inputPassword").val("");
 
-    window.location.assign("/all");
+    window.location.assign("/");
   }});
 
 
